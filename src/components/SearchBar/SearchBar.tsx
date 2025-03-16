@@ -1,6 +1,7 @@
 import s from "./SearchBar.module.css";
 import { CiSearch } from "react-icons/ci";
 import { FormEvent, useState } from "react";
+import { MdImageSearch } from "react-icons/md";
 
 interface onSubmitProps{
 onSubmit:(value:string)=>void
@@ -16,6 +17,7 @@ const SearchBar :React.FC<onSubmitProps>= ({ onSubmit }) => {
   };
   return (
     <header className={s.header}>
+      <span className={s.span}><MdImageSearch className={s.iconImg}/>Image search app </span>
       <form onSubmit={handleSubmit}>
         <button type="submit">
           <CiSearch className={s.iconSearch} />
