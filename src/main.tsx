@@ -1,7 +1,7 @@
 
 import React from "react";
 import ReactDOM from "react-dom/client";
-//import "modern-normalize";
+import "modern-normalize";
 import "./index.css";
 
 import { Toaster } from "react-hot-toast";
