@@ -1,11 +1,14 @@
 import s from "./SearchBar.module.css";
 import { CiSearch } from "react-icons/ci";
-import { useState } from "react";
+import { FormEvent, useState } from "react";
 
-const SearchBar = ({ onSubmit }) => {
+interface onSubmitProps{
+onSubmit:(value:string)=>void
+}
+const SearchBar :React.FC<onSubmitProps>= ({ onSubmit }) => {
   const [value, setValue] = useState("");
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: FormEvent<HTMLFormElement>): void => {
     value.trim();
     e.preventDefault();
     onSubmit(value);
