@@ -1,23 +1,19 @@
-import React from "react";
- import {Hourglass} from "react-loader-spinner";
-
-
-interface LoaderProps {
-  visible: boolean; 
-}
-
-const Loader: React.FC<LoaderProps> = ({ visible }) => {
+import { ThreeDots } from "react-loader-spinner";
+import s from "./Loader.module.css";
+const Loader = ({ loading }: { loading: boolean }) => {
   return (
-    <Hourglass
-      visible={visible}
-      height={50} 
-      width={50}  
-
-      //colors={["#306cce", "#72a1ed"]} // Колір для анімації
-      color="#306cce"
-    />
+    <div className={s.loader}>
+      <ThreeDots
+        visible={loading}
+        height="80"
+        width="80"
+        color="grey"
+        ariaLabel="three-dots-loading"
+        wrapperStyle={{}}
+        wrapperClass=""
+      />
+    </div>
   );
 };
 
 export default Loader;
-

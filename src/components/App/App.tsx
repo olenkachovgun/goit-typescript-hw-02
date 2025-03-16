@@ -16,7 +16,7 @@ function App() {
   const [photos, setPhotos] = useState<Photo[]>([]);
   const [query, setQuery] = useState<string>("");
   const [page, setPage] = useState<number>(1);
-  const [loading, setLoading] = useState<boolean>(false);
+  const [isLoading, setLoading] = useState<boolean>(false);
   const [error, setError] = useState<boolean>(false);
   const [modalIsOpen, setIsOpen] = useState<boolean>(false);
   const [selectedPhoto, setSelectedPhoto] = useState<Photo | null>(null);
@@ -66,7 +66,8 @@ function App() {
   return (
     <div>
       <SearchBar onSubmit={handleSetQuery} />
-      <Loader visible={loading} />
+      
+      <Loader loading={isLoading} />
       {error && <ErrorMessage error={error} />}
       {photos.length !== 0 && (
         <>
