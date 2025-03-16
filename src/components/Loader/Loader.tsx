@@ -1,17 +1,23 @@
-import  Hourglass  from "react-loader-spinner";
+import React from "react";
+ import {Hourglass} from "react-loader-spinner";
 
-const Loader = ({ visible }:{visible:boolean}) => {
+
+interface LoaderProps {
+  visible: boolean; 
+}
+
+const Loader: React.FC<LoaderProps> = ({ visible }) => {
   return (
     <Hourglass
       visible={visible}
-      height="50"
-      width="50"
-      ariaLabel="hourglass-loading"
-      wrapperStyle={{}}
-      wrapperClass=""
-      colors={["#306cce", "#72a1ed"]}
+      height={50} 
+      width={50}  
+
+      //colors={["#306cce", "#72a1ed"]} // Колір для анімації
+      color="#306cce"
     />
   );
 };
 
 export default Loader;
+
